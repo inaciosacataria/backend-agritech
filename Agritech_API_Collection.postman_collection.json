@@ -1,0 +1,675 @@
+{
+  "info": {
+    "name": "Agritech API - Sistema de Gestão",
+    "description": "Collection completa para testar a API RESTful do sistema de gestão agritech",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Empresas",
+      "item": [
+        {
+          "name": "Criar Empresa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Agritech Solutions\",\n  \"cnpj\": \"12.345.678/0001-90\",\n  \"telefone\": \"(11) 99999-9999\",\n  \"email\": \"contato@agritech.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/empresas",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Empresas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/empresas",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Empresa por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/empresas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Empresa",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Agritech Solutions Atualizada\",\n  \"telefone\": \"(11) 88888-8888\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/empresas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Empresa",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/empresas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Campanhas",
+      "item": [
+        {
+          "name": "Criar Campanha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Campanha Soja 2024\",\n  \"empresa_id\": 1,\n  \"data_inicio\": \"2024-01-01\",\n  \"data_fim\": \"2024-12-31\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/campanhas",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Campanhas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/campanhas",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Campanha por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/campanhas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Campanhas por Empresa",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/campanhas/empresa/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas", "empresa", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Campanha",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Campanha Soja 2024 Atualizada\",\n  \"data_fim\": \"2024-11-30\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/campanhas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Campanha",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/campanhas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Técnicos",
+      "item": [
+        {
+          "name": "Criar Técnico",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Técnicos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Técnico por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Técnicos por Campanha",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/campanha/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "campanha", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Produtores de um Técnico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/1/produtores",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "1", "produtores"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Técnico",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva Atualizado\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Técnico",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtores",
+      "item": [
+        {
+          "name": "Criar Produtor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Santos\",\n  \"localizacao\": \"Fazenda São José, SP\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Produtores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtores",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Produtor por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtores/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Atribuições de um Produtor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtores/1/atribuicoes",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "1", "atribuicoes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Produtor",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Santos Atualizada\",\n  \"localizacao\": \"Fazenda São José Atualizada, SP\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Produtor",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtores/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atribuir Produtor a Técnico",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"produtor_id\": 1,\n  \"tecnico_id\": 1,\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores/atribuir",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "atribuir"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transferir Produtor",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"produtor_id\": 1,\n  \"tecnico_antigo_id\": 1,\n  \"tecnico_novo_id\": 2,\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores/transferir",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "transferir"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Fluxo Completo de Teste",
+      "item": [
+        {
+          "name": "1. Criar Empresa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Agritech Solutions\",\n  \"cnpj\": \"12.345.678/0001-90\",\n  \"telefone\": \"(11) 99999-9999\",\n  \"email\": \"contato@agritech.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/empresas",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "2. Criar Campanha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Campanha Soja 2024\",\n  \"empresa_id\": 1,\n  \"data_inicio\": \"2024-01-01\",\n  \"data_fim\": \"2024-12-31\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/campanhas",
+              "host": ["{{baseUrl}}"],
+              "path": ["campanhas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3. Criar Técnico",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4. Criar Segundo Técnico",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Pedro Santos\",\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "5. Criar Produtor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Santos\",\n  \"localizacao\": \"Fazenda São José, SP\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "6. Atribuir Produtor ao Primeiro Técnico",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"produtor_id\": 1,\n  \"tecnico_id\": 1,\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores/atribuir",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "atribuir"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "7. Listar Produtores do Primeiro Técnico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/1/produtores",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "1", "produtores"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "8. Transferir Produtor para Segundo Técnico",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"produtor_id\": 1,\n  \"tecnico_antigo_id\": 1,\n  \"tecnico_novo_id\": 2,\n  \"campanha_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtores/transferir",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "transferir"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "9. Listar Produtores do Segundo Técnico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tecnicos/2/produtores",
+              "host": ["{{baseUrl}}"],
+              "path": ["tecnicos", "2", "produtores"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10. Listar Atribuições do Produtor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtores/1/atribuicoes",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtores", "1", "atribuicoes"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

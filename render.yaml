@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: backend-agritech
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_DIALECT
+        value: postgres
+      - key: DB_SSL
+        value: "true"
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_NAME
+        value: agritech
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+
