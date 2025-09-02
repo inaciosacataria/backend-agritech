@@ -190,12 +190,3 @@ npm test         # Executa os testes
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
-
-Este projeto está sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 📞 Suporte
-
-Para suporte, entre em contato através de:
-- Email: suporte@agritech.com
-- Issues: [GitHub Issues](https://github.com/seu-usuario/backend-agritech/issues)
