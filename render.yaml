@@ -3,12 +3,14 @@ services:
     name: backend-agritech
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: node dist/server.js
     autoDeploy: true
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: DB_DIALECT
         value: postgres
       - key: DB_SSL
