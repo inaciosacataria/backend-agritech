@@ -16,9 +16,7 @@ export class EmpresaController {
       if (
         error.message === 'NUIT inválido' ||
         error.message === 'NUIT já cadastrado' ||
-        error.message === 'CNPJ inválido' ||
-        error.message === 'CNPJ já cadastrado' ||
-        error.message === 'Informe NUIT ou CNPJ'
+        error.message === 'Informe NUIT '
       ) {
         return res.status(400).json({ error: error.message });
       }
